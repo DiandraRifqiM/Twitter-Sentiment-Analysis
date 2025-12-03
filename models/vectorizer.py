@@ -12,8 +12,8 @@ prp.X_test = prp.X_test.fillna("").astype(str)
 Tfid= TfidfVectorizer(stop_words="english")
 
 # Train Test Vectorizer
-X_train = Tfid.fit_transform(prp.X_train)
-X_test = Tfid.transform(prp.X_test)
+Tfid_X_train = Tfid.fit_transform(prp.X_train)
+Tfid_X_test = Tfid.transform(prp.X_test)
 
 print("Train Test Vectorizer Complete")
 
