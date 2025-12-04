@@ -3,7 +3,7 @@
 # File import
 from models import vectorizer as vct
 from src import preprocessing as prp
-
+from logs import logger as lg
 
 # Lib import
 from sklearn.svm import LinearSVC
@@ -19,3 +19,6 @@ print("Linear SVM Model Successfull!")
 yPred = linSvc.predict(vct.Tfid_X_test)
 linSvc_score = classification_report(prp.y_test, yPred)
 print(f"Linear SVC Accuracy Score:\n{linSvc_score}")
+
+# Model Evaluate Saved
+# lg.log_report("Linear SVM Accuracy Report", linSvc_score)

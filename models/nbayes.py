@@ -3,6 +3,7 @@
 # File Import
 from models import vectorizer as vct
 from src import preprocessing as prp
+from logs import logger as lg
 
 # Lib Import
 from sklearn.naive_bayes import MultinomialNB
@@ -19,5 +20,6 @@ yPred = MultiNB.predict(vct.Tfid_X_test)
 MultiNB_score = classification_report(prp.y_test, yPred)
 print(f"Naive Bayes Accuracy Score:\n{MultiNB_score}")
 
-
+# Model Evaluate Saved
+lg.log_report("Naive Bayes Accuracy Score", MultiNB_score)
 
