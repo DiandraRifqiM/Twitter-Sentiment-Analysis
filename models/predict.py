@@ -25,14 +25,21 @@ def main():
     
     # Predict
     predict = model.predict(X)[0]
+    
+    def predDeci(val):
+        if val ==4:
+            return "Good Reaction"
+        else:
+            return "Bad Reaction"
 
     # Probability (if supported)
     try:
         prob = model.predict_proba(X)[0]
-        print("Prediction:", predict)
+        # print("Prediction:", predict)
+        print("Prediction:", predDeci(predict))
         print("Probability:", prob)
     except:
-        print("Prediction:", predict)
+        print("Prediction:", predDeci(predict))
 
 if __name__ == "__main__":
     main()
